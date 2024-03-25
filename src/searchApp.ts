@@ -9,6 +9,10 @@ import {
 import * as ACData from "adaptivecards-templating";
 import imageCard from "./adaptiveCards/imageCard.json";
 import { DalleService } from "./dalleService";
+import config from "./config";
+
+const endpoint: string = config.aoaiEndpoint;
+const apiKey: string = config.aoaiKey;
 
 export class SearchApp extends TeamsActivityHandler {
   constructor() {
@@ -22,8 +26,8 @@ export class SearchApp extends TeamsActivityHandler {
   ): Promise<MessagingExtensionResponse> {
     const searchQuery = query.parameters[0].value;
     const attachments = [];
-    const apiKey = ""; // Insert your Azure Open AI API Key here
-    const service = new DalleService(apiKey, searchQuery);
+    //const apiKey = ""; // Insert your Azure Open AI API Key here
+    const service = new DalleService(apiKey, endpoint, searchQuery);
     switch (query.commandId ) {
       case 'generateImage':
         console.log('Trying to generate image using Dall-E');

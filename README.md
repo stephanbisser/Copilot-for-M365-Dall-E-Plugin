@@ -16,12 +16,13 @@ This app template is a search-based [message extension](https://docs.microsoft.c
 > - Join Microsoft 365 Copilot Plugin development [early access program](https://aka.ms/plugins-dev-waitlist).
 
 1. First, select the Teams Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. To directly trigger the Message Extension in Teams, you can:
+2. Enter your Azure Open AI API key and the endpoint URL in the `.localConfigs` file
+3. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
+4. To directly trigger the Message Extension in Teams, you can:
    1. Press F5 to start debugging which launches your app in Teams using a web browser. Select `Debug in Teams (Edge)` or `Debug in Teams (Chrome)`.
    2. When Teams launches in the browser, select the Add button in the dialog to install your app to Teams.
    3. `@mention` Your message extension from the `search box area`, `@mention` your message extension from the `compose message area` or click the `...` under compose message area to find your message extension.
-4. To trigger the Message Extension through Copilot, you can:
+5. To trigger the Message Extension through Copilot, you can:
    1. Select `Debug in Copilot (Edge)` or `Debug in Copilot (Chrome)` from the launch configuration dropdown.
    2. When Teams launches in the browser, click the `Apps` icon from Teams client left rail to open Teams app store and search for `Copilot`.
    3. Open the `Copilot` app and send a prompt to trigger your plugin.

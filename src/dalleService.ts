@@ -5,9 +5,10 @@ export class DalleService {
     private url: string = ''; //insert your Azure Open AI Endpoint URL here
     private prompt: string;
 
-    constructor(apiKey: string, prompt: string) {
+    constructor(apiKey: string, endpoint: string, prompt: string) {
         this.apiKey = apiKey;
         this.prompt = prompt;
+        this.url = endpoint;
     }
 
     public async makeApiCall(): Promise<any> {
