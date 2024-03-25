@@ -1,0 +1,59 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.16",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Solvion",
+        "websiteUrl": "https://www.solvion.net",
+        "privacyUrl": "https://www.solvion.net/privacy",
+        "termsOfUseUrl": "https://www.solvion.net/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Dall-E Plugin${{APP_NAME_SUFFIX}}",
+        "full": "Dall-E Image Generation Plugin"
+    },
+    "description": {
+        "short": "Generate an image of something using the user's description and send it back.",
+        "full": "Generate an image of something using the description of a user and send it back to the user. This is a powerful plugin that allows users to generate images based on their descriptions. With this plugin, users can create stunning images for their websites, social media, or any other purpose with just one prompt"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [],
+    "composeExtensions": [
+        {
+            "botId": "${{BOT_ID}}",
+            "commands": [
+                {
+                    "id": "generateImage",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Generate an image of something using your description or prompt and let Copilot send it back to you.",
+                    "title": "Generate Image",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "imageDescription",
+                            "title": "Image description",
+                            "description": "The description of the image to be generated",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
